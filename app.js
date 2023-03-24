@@ -5,7 +5,7 @@ const mongoose = require("mongoose")
 
 const app = express();
 
-mongoose.connect('mongodb+srv://ndohjoelmbj16:oncHsdYImDEQyjD6@graphql.bdgwbzh.mongodb.net/?retryWrites=true&w=majority')
+mongoose.connect(process.env.MONGO_URL)
 mongoose.connection.once('open', () => {
   console.log("connected to db")
 })
