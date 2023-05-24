@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const cors = require("cors")
 const dbConfig = require("config").get("db");
 const app = express();
-const PORT = process.env.PORT | 7001
+const PORT = process.env.PORT || 7001
 
 app.use(cors())
 
