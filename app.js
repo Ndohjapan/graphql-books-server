@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const cors = require("cors")
 const dbConfig = require("config").get("db");
 const app = express();
-
+const PORT = process.env.PORT | 7001
 
 app.use(cors())
 
@@ -24,6 +24,6 @@ app.use(
   })
 );
 
-app.listen(7001, () => {
-  console.log("App is listening on port " + 7001);
+app.listen(PORT, () => {
+  console.log("App is listening on port " + PORT);
 });
