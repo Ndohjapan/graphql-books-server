@@ -3,13 +3,14 @@ const { graphqlHTTP } = require("express-graphql");
 const schema = require("./schema/schema");
 const mongoose = require("mongoose");
 const cors = require("cors")
-
+const dbConfig = require("config").get("db");
 const app = express();
 
 
 app.use(cors())
 
-mongoose.connect('mongodb://127.0.0.1:27017/graphql-book')
+
+mongoose.connect(dbConfig.url)
   .then(() => console.log('Connected successfully'))
   .catch(err => console.error(err));
 
